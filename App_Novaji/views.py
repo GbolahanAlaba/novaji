@@ -12,7 +12,8 @@ class RegisterViewSets(viewsets.ViewSet):
     @handle_exceptions
     def register(self, request):
 
+        ref = generate_unique_code()
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response({"status": "success", "message": "Data registered successfully"}, status=status.HTTP_201_CREATED)
+        serializer.save(ref_code=ref)
+        return Response({"status": "success", "message": "Data registered successfully", "data": serializer.data}, status=status.HTTP_201_CREATED)

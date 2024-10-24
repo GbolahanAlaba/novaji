@@ -2,6 +2,8 @@ from functools import wraps
 from rest_framework.response import Response
 from rest_framework import status
 from . models import *
+import random
+import string
 
 
 def handle_exceptions(func):
@@ -15,3 +17,9 @@ def handle_exceptions(func):
     return wrapper
 
 
+
+
+def generate_unique_code(length=16):
+    characters = string.ascii_letters + string.digits
+    unique_code = ''.join(random.choices(characters, k=length))
+    return unique_code
