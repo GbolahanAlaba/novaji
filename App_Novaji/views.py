@@ -38,12 +38,12 @@ class RegisterViewSets(viewsets.ViewSet):
     
 
     @handle_exceptions
-    def update_registration(self, request, reg_id):
-        obj = Register.objects.filter(reg_id=reg_id).first()
+    def update_registration(self, request, ref_code):
+        obj = Register.objects.filter(ref_code=ref_code).first()
 
         if not obj:
             return Response({"status": "failed", "message": "Invalid registration ID"}, status=status.HTTP_404_NOT_FOUND)
-        elif not reg_id:
+        elif not ref_code:
             return Response({"status": "failed", "message": "Registration ID is required"}, status=status.HTTP_400_BAD_REQUEST)
 
         if not request.data:

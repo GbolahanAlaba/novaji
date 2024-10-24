@@ -10,6 +10,6 @@ class RegisterSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Register
-        fields = ['reg_id', 'phone_number', 'mobile_network', 'ref_code']
+        fields = ['phone_number', 'mobile_network', 'ref_code']
     
 
