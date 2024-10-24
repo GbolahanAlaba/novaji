@@ -16,34 +16,6 @@ import base64
 class RegisterViewSets(viewsets.ViewSet):
     serializer_class = RegisterSerializer   
 
-    def gen_encrypt(self, text, key, iv):
-        padder = padding.PKCS7(algorithms.AES.block_size).padder()
-        padded_text = padder.update(text.encode()) + padder.finalize()
-
-        cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
-        encryptor = cipher.encryptor()
-        encrypted_text = encryptor.update(padded_text) + encryptor.finalize()
-
-        return base64.b64encode(encrypted_text).decode()
-
-    def encrypt(self, request):
-        text = request.data.get('text', 'Default text')
-
-        key = os.urandom(32)
-        iv = os.urandom(16) 
-
-        # Encrypt the text
-        encrypted_text = self.gen_encrypt(text, key, iv)
-
-        return Response({
-            "status": "success",
-            "message": "Text encrypted successfully",
-            "encrypted_text": encrypted_text,
-            "key": base64.b64encode(key).decode(),
-            "iv": base64.b64encode(iv).decode(),
-        }, status=status.HTTP_200_OK)
-    
-
     @handle_exceptions
     def register(self, request):
         phone = request.data.get("phone_number")
