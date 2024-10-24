@@ -38,7 +38,7 @@ class RegisterViewSets(viewsets.ViewSet):
         elif not ref_code:
             return Response({"status": "failed", "message": "Registration ID is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        if not request.data:
+        elif not request.data:
             return Response({"status": "failed", "message": "No data provided for update"}, status=status.HTTP_400_BAD_REQUEST)
 
         required_fields = ['phone_number', 'mobile_network', 'message']
