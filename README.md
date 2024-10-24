@@ -152,7 +152,8 @@ Base URL - `http://127.0.0.1:8000`
   }
 
 `200 Ok` on registration.
-
+`400 Bad request` on bad request error.
+`404 Not found` on not found error.
 `509 Internal Server Error` on server error.
 
 ## **Testing**

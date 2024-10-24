@@ -90,7 +90,7 @@ class RegisterViewSets(viewsets.ViewSet):
         if not request.data:
             return Response({"status": "failed", "message": "No data provided for update"}, status=status.HTTP_400_BAD_REQUEST)
 
-        required_fields = ['phone_number', 'mobile_network']
+        required_fields = ['phone_number', 'mobile_network', 'message']
         for field in required_fields:
             if field not in request.data:
                 return Response({
@@ -98,7 +98,6 @@ class RegisterViewSets(viewsets.ViewSet):
                     "message": f"'{field}' is a required field."
                 }, status=status.HTTP_400_BAD_REQUEST)
 
-        # Custom field validation (e.g., email format)
         try:
             serializer = self.serializer_class(obj, data=request.data)
             serializer.is_valid(raise_exception=True)
