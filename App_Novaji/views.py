@@ -4,13 +4,6 @@ from . serializers import *
 from . utils import *
 from rest_framework import status
 
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives import padding
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives import hashes
-import os
-import base64
 
 
 class RegisterViewSets(viewsets.ViewSet):
