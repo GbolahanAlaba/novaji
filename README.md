@@ -99,7 +99,6 @@ Base URL - `http://127.0.0.1:8000`
 
 #### GET /reg/get-registrations/
 
-
 - **Response**:
 
   ```json
@@ -126,6 +125,35 @@ Base URL - `http://127.0.0.1:8000`
 
 `509 Internal Server Error` on server error.
 
+
+#### PUT /reg/update-registrations/
+
+- **Request Body**:
+
+  ```json
+  {
+    "phone_number": "09084848838",
+    "mobile_network": "Airtel",
+    "message": "Good network"
+  }
+
+- **Response**:
+
+  ```json
+  {
+    "status": "success",
+    "message": "Record updated",
+    "data": {
+        "reg_id": "8ccb2d48-381c-4269-b7f2-8a0304b88302",
+        "phone_number": "090848488383",
+        "mobile_network": "Airtel",
+        "ref_code": "rakZDFA9OUr95zf0"
+    }
+  }
+
+`200 Ok` on registration.
+
+`509 Internal Server Error` on server error.
 
 ## **Testing**
 Run a tests to ensure the API endpoints work as expected.
