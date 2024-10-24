@@ -110,13 +110,13 @@ Base URL - `http://127.0.0.1:8000`
             "reg_id": "8ccb2d48-381c-4269-b7f2-8a0304b88302",
             "phone_number": "090848488383",
             "mobile_network": "MTN",
-            "ref_code": "hdjdjdj"
+            "ref_code": "rakDDFA9OUr95zf0"
         },
         {
             "reg_id": "25349651-3a9d-47e8-a370-ed1951f127ce",
             "phone_number": "090848488383",
             "mobile_network": "MTN",
-            "ref_code": "hdjdjkkfdj"
+            "ref_code": "rakZDFA9OUr95zf4"
         },
     ]
   }
