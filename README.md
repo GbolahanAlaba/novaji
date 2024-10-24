@@ -50,6 +50,7 @@ Apply the migrations to set up your database schema:
 
 `python manage.py migrate`
 
+Run Question 1 with "python encrypt" in the terminal
 
 ## **Run the Development Server**
 Start the development server to verify everything is set up correctly:
