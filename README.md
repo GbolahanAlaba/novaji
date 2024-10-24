@@ -158,6 +158,3 @@ Base URL - `http://127.0.0.1:8000`
 `509 Internal Server Error` on server error.
 
 ## **Testing**
-Run a tests to ensure the API endpoints work as expected.
-
-`py manage.py test`
