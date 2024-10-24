@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from django.utils import timezone
 
 # Create your models here.
 
@@ -10,3 +11,5 @@ class Register(models.Model):
     mobile_network = models.CharField(max_length=50, blank=True, null=True, default='')
     message = models.CharField(max_length=50, blank=True, null=True, default='')
     ref_code = models.CharField(max_length=100, blank=True, null=True, default="", unique=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(default=timezone.now)

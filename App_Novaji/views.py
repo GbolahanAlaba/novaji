@@ -27,11 +27,11 @@ class RegisterViewSets(viewsets.ViewSet):
         return Response({"status": "success", "message": "Registered records", "data": serializer.data}, status=status.HTTP_200_OK)
     
 
-    @handle_exceptions
+    # @handle_exceptions
     def update_registration(self, request, reg_id):
-        obj = Register.objects.filter(reg_id=reg_id)
+        obj = Register.objects.filter(reg_id=reg_id).first()
 
-        serializer = self.serializer_class(obj, many=True)
         serializer = self.serializer_class(obj, data=request.data)
         serializer.is_valid(raise_exception=True)
+        serializer.save(updated_at=timezone.now())
         return Response({"status": "success", "message": "Record updated", "data": serializer.data}, status=status.HTTP_200_OK)
