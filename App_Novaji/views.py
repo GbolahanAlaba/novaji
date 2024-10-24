@@ -70,19 +70,6 @@ class RegisterViewSets(viewsets.ViewSet):
         obj = Register.objects.filter(reg_id=reg_id).first()
 
         if not obj:
-            return Response({"status": "failed", "message": "Invalid registrion ID"}, status=status.HTTP_200_OK)
-
-        serializer = self.serializer_class(obj, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save(updated_at=timezone.now())
-        return Response({"status": "success", "message": "Record updated", "data": serializer.data}, status=status.HTTP_200_OK)
-    
-
-    @handle_exceptions
-    def update_registration(self, request, reg_id):
-        obj = Register.objects.filter(reg_id=reg_id).first()
-
-        if not obj:
             return Response({"status": "failed", "message": "Invalid registration ID"}, status=status.HTTP_404_NOT_FOUND)
         elif not reg_id:
             return Response({"status": "failed", "message": "Registration ID is required"}, status=status.HTTP_400_BAD_REQUEST)
