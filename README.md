@@ -55,7 +55,7 @@ Apply the migrations to set up your database schema:
 Start the development server to verify everything is set up correctly:
 
 `python manage.py runserver`
-You should now be able to access the application at http://127.0.0.1:8000/api
+You should now be able to access the application at http://127.0.0.1:8000
 
 ## **API Endpoints**
 Base URL - `http://127.0.0.1:8000`
@@ -67,7 +67,7 @@ Base URL - `http://127.0.0.1:8000`
 
 ## **API Implementation**
 
-#### POST /reg/register/
+#### POST /register/
 
 - **Request Body**:
 
@@ -97,7 +97,7 @@ Base URL - `http://127.0.0.1:8000`
 `509 Internal Server Error` on server error.
 
 
-#### GET /reg/get-registrations/
+#### GET /get-registrations/
 
 - **Response**:
 
@@ -126,7 +126,7 @@ Base URL - `http://127.0.0.1:8000`
 `509 Internal Server Error` on server error.
 
 
-#### PUT /reg/update-registrations/
+#### PUT /update-registrations/
 
 - **Request Body**:
 
