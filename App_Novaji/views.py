@@ -5,7 +5,6 @@ from . utils import *
 from rest_framework import status
 
 
-
 class RegisterViewSets(viewsets.ViewSet):
     serializer_class = RegisterSerializer   
 
